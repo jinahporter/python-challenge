@@ -2,14 +2,14 @@ import os
 import csv
 
 csvpath = os.path.join('Resources', 'budget_data.csv')
-
+#csvpath = os.path.join('..','PyBank','Resources', 'budget_data.csv')
 
 months = []
 profit_losses = []
 average_change = []
 profit_change = []
 
-with open(csvpath, 'r') as csvfile:
+with open(csvpath, "r") as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
     csvreader = csv.reader(csvfile, delimiter = ',')
 #    print(csvreader)
@@ -21,13 +21,13 @@ with open(csvpath, 'r') as csvfile:
         profit_losses.append(int(row[1]))
         months.append(str(row[0]))
         
-
 total_months = len(months)
 
 print(total_months)
 print("Total Profit/Losses: $ " + str(sum(profit_losses)))
 # 1) total number of months, 2)total net profit done (8/17)
 
+# 3, 4, 5 start below
 for a in range(len(profit_losses)-1):
     profit_change.append(profit_losses[a + 1] - profit_losses[a])
 
