@@ -31,7 +31,10 @@ print("Total Profit/Losses: $ " + str(sum(profit_losses)))
 for a in range(len(profit_losses)-1):
     profit_change.append(profit_losses[a + 1] - profit_losses[a])
 
+average_change = (sum(profit_change) / len(profit_change))
 max_increase = max(profit_change)
 max_decrease = min(profit_change)
 
-print(f"The greatest increase in profits is {max_increase}, and the greatest decrease in profits is {max_decrease}")
+print(f"Average: {average_change}")
+print(f"The greatest increase in profits is $ {max_increase}, and the greatest decrease in profits is $ {max_decrease}")
+# 3) 4) & 5) greatest increase/decrease done
