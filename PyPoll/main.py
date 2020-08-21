@@ -6,12 +6,7 @@ csvpath = os.path.join('Resources', 'election_data.csv')
 vote = []
 candidates = []
 candidate_vote = []
-count = 0
-
-vote_pct = []
-
-total_vote = 0
-
+percentage = []
 
 with open(csvpath, "r") as csvfile:
      csvreader = csv.reader(csvfile, delimiter = ',')
@@ -32,12 +27,14 @@ with open(csvpath, "r") as csvfile:
 total_num_vote = len(vote)
 
 #print(total_num_vote)
-
+#print(new_list_of_candidates)
 
 print("Election Results")
 print("-------------------------------------")
 print(f"Total Votes: {total_num_vote} ")
 print("-------------------------------------")
 
+
 for a in range(len(candidates)):
-     print(f"{candidates[a]} : {candidate_vote[a]}")
+     percentage = {(candidate_vote[a]) / (total_num_vote)} * 100
+     print(f"{candidates[a]} : {percentage} %, {candidate_vote[a]}")
