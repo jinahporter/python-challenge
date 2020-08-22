@@ -10,12 +10,12 @@ average_change = []
 profit_change = []
 
 with open(csvpath, "r") as csvfile:
-    # CSV reader specifies delimiter and variable that holds contents
+    
     csvreader = csv.reader(csvfile, delimiter = ',')
-#    print(csvreader)
-    # Read the header row first (skip this step if there is no header)
+
+    # Read the header row first 
     csv_header = next(csvreader)
-#    print(f"CSV Header: {csv_header}")
+
     # Read each row of data after the header
     for row in csvreader:
         profit_losses.append(int(row[1]))
@@ -23,8 +23,10 @@ with open(csvpath, "r") as csvfile:
         
 total_months = len(months)
 
-print(total_months)
-print("Total Profit/Losses: $ " + str(sum(profit_losses)))
+print("Financial Analysis")
+print("---------------------------------------------")
+print(f"Total Months: {total_months}")
+print("Total: $ " + str(sum(profit_losses)))
 # 1) total number of months, 2)total net profit done (8/17)
 
 # 3, 4, 5 start below
@@ -35,6 +37,7 @@ average_change = (sum(profit_change) / len(profit_change))
 max_increase = max(profit_change)
 max_decrease = min(profit_change)
 
-print(f"Average: {average_change}")
-print(f"The greatest increase in profits is $ {max_increase}, and the greatest decrease in profits is $ {max_decrease}")
+print(f"Average Change: ${average_change}")
+print(f"Greatest Increase in Profits: ($ {max_increase})")
+print(f"Greatest Decrease in Profits: ($ {max_decrease})")
 # 3) 4) & 5) greatest increase/decrease done
